@@ -1,0 +1,215 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[spanish,es-tabla]{babel}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{graphicx, wrapfig}
+\usepackage{anyfontsize}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\colorlet{punct}{red!60!black}
+
+\colorlet{numb}{magenta!60!black}
+
+\usepackage{xcolor}
+\usepackage{vmargin}
+\usepackage{pdfpages}
+\usepackage{svg}
+\usepackage{booktabs}
+\usepackage{amsmath} % you need amsmath as the demo includes a use of \eqref
+\usepackage{cite}
+\usepackage[spanish]{babel}
+
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
+\definecolor{pblue}{rgb}{0.13,0.13,1}
+\definecolor{pgreen}{rgb}{0,0.5,0}
+\definecolor{pred}{rgb}{0.9,0,0}
+\definecolor{pgrey}{rgb}{0.46,0.45,0.48}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=azure,
+    filecolor=magenta,      
+    urlcolor=azure,
+    citecolor=azure,
+    hypertexnames=true,
+}
+
+\lstset{language=Java,
+  showspaces=false,
+  showtabs=false,
+  breaklines=true,
+  showstringspaces=false,
+  breakatwhitespace=true,
+  commentstyle=\color{pgreen},
+  keywordstyle=\color{pblue},
+  stringstyle=\color{pred},
+  basicstyle=\ttfamily,
+  moredelim=[il][\textcolor{pgrey}]{},
+  moredelim=[is][\textcolor{pgrey}]{\%\%}{\%\%}
+}
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+\setpapersize{A4}
+\setmargins{3cm}        % margen izquierdo
+{1.5cm}                   % margen superior
+{15cm}                  % anchura del texto
+{22.75cm}               % altura del texto
+{1cm}                   % altura de los encabezados
+{1cm}                 % espacio entre el texto y los encabezados
+{0pt}                   % altura del pie de página
+{1cm}                   % espacio entre el texto y el pie de página
+
+
+\begin{document}
+	\begin{titlepage}
+		{\fontfamily{phv}\selectfont
+			\begin{center}
+				\vspace*{-2.5cm}
+				
+				\includegraphics[width=0.25\textwidth]{images/logoUC}
+				
+				\vspace{0.2cm}
+				\textbf{\Huge\emph{Facultad \\
+						de\\
+						Ciencias}}
+				
+				\vspace{1cm}
+				\textbf{\fontsize{20}{24}\selectfont Título en español}\\
+				\fontsize{19}{24}\selectfont {Título en inglés}
+				
+				\vspace{1.5cm}
+				\fontsize{14}{17}\selectfont Trabajo de Fin de Grado\\
+				para acceder al\\
+                \vspace{0.5cm}
+				\textbf{\fontsize{17}{20}\selectfont GRADO EN INGENIERÍA INFORMÁTICA}
+				
+				\vfill
+				
+				
+				\vspace{0.8cm}
+				
+				
+				\begin{flushright}
+					\fontsize{14}{17}
+					Autor: Nombre autor\\
+					Director: Nombre director\\
+					Codirector: Nombre codirector (opcional)\\
+					Convocatoria: fecha (e.g. Julio - 2022)
+				\end{flushright}
+				
+				
+		\end{center}}
+	\end{titlepage}
+
+
+% Acknowledgements Page (Optional)                              
+\newpage
+\begin{center}
+{\bf \Huge Agradecimientos}
+\end{center}
+\vspace{1cm}
+\setlength{\baselineskip}{0.8cm}
+\onehalfspacing
+\begin{flushleft}
+
+\input{agradecimientos.tex}
+
+\end{flushleft}
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+{\bf \Huge Resumen}
+\end{center}
+\onehalfspacing
+
+\input{resumen.tex}
+
+\begin{center}
+{\bf \Large Palabras clave}
+\end{center}
+% Insertar pablabras clave  
+Palabra clave 1, palabra clave 2, ...
+
+\newpage
+
+\thispagestyle{empty}
+
+\begin{center}
+{\bf \Huge Abstract}
+\end{center}
+
+\input{abstract.tex}
+
+\begin{center}
+{\bf \Large Keywords}
+\end{center}
+Keyword 1, Keyword 2, ...
+
+\newpage
+
+
+%\setcounter{page}{1}
+
+	
+
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\newpage
+
+\input{introduccion.tex}
+\newpage
+
+\input{latex.tex}
+\newpage
+
+
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{bibliografia.bib}
+
+
+\end{document}
