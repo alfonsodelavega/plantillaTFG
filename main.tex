@@ -1,6 +1,5 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-%\usepackage[spanish,es-tabla]{babel}
 \usepackage[spanish,es-tabla]{babel}
 \usepackage{graphicx, wrapfig}
 \usepackage{anyfontsize}
@@ -13,6 +12,10 @@
 \usepackage{float}
 \usepackage{listings}
 \usepackage{xcolor}
+
+% fuente del título
+\usepackage[T1]{fontenc}
+
 
 \colorlet{punct}{red!60!black}
 
@@ -88,22 +91,23 @@
 
 \setpapersize{A4}
 \setmargins{3cm}        % margen izquierdo
-{1.5cm}                   % margen superior
+{1.5cm}                 % margen superior
 {15cm}                  % anchura del texto
 {22.75cm}               % altura del texto
 {1cm}                   % altura de los encabezados
-{1cm}                 % espacio entre el texto y los encabezados
+{1cm}                   % espacio entre el texto y los encabezados
 {0pt}                   % altura del pie de página
 {1cm}                   % espacio entre el texto y el pie de página
 
 
+
 \begin{document}
 	\begin{titlepage}
-		{\fontfamily{phv}\selectfont
+		{\fontfamily{qag}\selectfont
 			\begin{center}
 				\vspace*{-2.5cm}
 				
-				\includegraphics[width=0.25\textwidth]{images/logoUC}
+				\includegraphics[width=\linewidth]{images/logoUC.pdf}
 				
 				\vspace{0.2cm}
 				\textbf{\Huge\emph{Facultad \\
